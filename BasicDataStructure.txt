@@ -1,0 +1,11 @@
+        1. DataStructure is particular way to storing and organize data in computer so that it can use efficint way..//
+        2. Two type of DataStructure (i) Linier DataStructure
+                                     (ii) Non Liniar DataStructure
+        3. All DataStructure program are C++ code. 
+            You can learn c++ and DataStructure in parrealy.
+            To understand DataStructure and C++ ...
+             
+
+
+
+
