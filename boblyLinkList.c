@@ -163,16 +163,53 @@ void view()
     }
 }
 
+void deleteMidnode()
+{
+    int pos;
+    int pass=0;
+    struct node *CN,*PN;
+    printf("Enter a position of node");
+    scanf("%d",&pos);
+
+    if(start==NULL)
+    {
+        printf("Link list is empty");
+    }
+    else{
+        CN=start;
+
+        while(pos!=pass )
+        {
+            PN=CN;
+            CN=CN->next;
+            pass++;
+
+        }
+        PN->next=CN->next;
+        CN->next->prv=PN;
+        free(CN);
+
+
+    }
+
+
+
+
+
+}
+
+
+
 int main()
 {
-
-    insertAtEnd();
-    insertAtEnd();
-    insertAtEnd();
-    // insertAtEnd();
-    // insertAtEnd();
-    // insertAtEnd();
-    // insertAtMid();
-    insertAtMid();
+    insertAtBeg();
+    insertAtBeg();
+    insertAtBeg();
+    insertAtBeg();
+    insertAtBeg();
+     insertAtMid();
+     deleteFirstNode();
+     deleteLastNode();
+    deleteMidnode();
     view();
 }
