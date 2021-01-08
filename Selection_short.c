@@ -45,13 +45,7 @@ int main()
 {
     int value;
     int array[]={12,2,3,1,6};
-    // int array1[]={3,22,12,32,11,8};
-
-      selection_short(array,5);
-//    value= find_Min(array,6,0);
-//    printf("%d",value);
-//    value= find_Min(array1,6,1);
-//    printf("%d",value);
+     selection_short(array,5);
 
 
 
