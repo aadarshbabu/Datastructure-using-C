@@ -1,109 +1,127 @@
 
 #include<stdio.h>
 #include<malloc.h>
-
 struct node 
-{
+{ 
+    int data;
     struct node* right;
     struct node* left;
-    int data;
+    
 
 };
-struct node* root=NULL;
-struct node* createNode(struct node* root, int data)
+struct node* root=NULL; // Root is globle pointer;
+
+struct node* createNode(int data)
 {
-    struct node* ptr=(struct node*)malloc(sizeof(struct node));
+    //   printf("create node funciton call");
+    struct node* ptr=(struct node*) malloc(sizeof(struct node));
         ptr->data=data;
         ptr->left=NULL;
         ptr->right=NULL;
-        return ptr;
+
+        return (ptr);
 }
 
 
 
-void insertNode(struct node* NN)
+int insertNode(struct node* NN)
 {
+    //   printf("insert node funciton call");
     struct node* PTR;
         if(root==NULL)
         {
             root=NN;
+            return 1;
         }
         else{
+
             PTR=root;
-            while (PTR!=NULL)
+            while (1)
             {
                 if(PTR->data > NN->data)
                 {
                     if(PTR->left==NULL){
                         PTR->left=NN;
-                    } 
+                        return 1;
+                     } 
+                    PTR=PTR->left;
                 }
-                PTR=PTR->left;
+             
                   
                 if(PTR->data < NN->data){
                     if(PTR->right==NULL){
                          PTR->right=NN;
-                    }
-
+                         return 1;
+                     }
+                     PTR=PTR->right;
                 }        
-                PTR=PTR->right;
+               
                 
 
             }
 
+     
         }
-}
-void  inorder(struct node* root)
-{   
-    if(root)
-    {
-    inorder(root->left);
-    printf("%d ",root->data);
-    inorder(root->right);
-    }
-}
-void  preorder(struct node* root)
-{
-    if(root)
-    {
-        printf("%d ",root->data);
-        preorder(root->left);
-        preorder(root->right);
-    }
+        return 0;
 }
 
- void postorder( struct node* root )
+int  inorder(struct node* Root)
+{   
+    if(!Root)
+    {
+       return 1;
+    }
+     inorder(Root->left);
+     printf("\n%d,",Root->data);
+     inorder(Root->right);
+
+}
+
+int  preorder(struct node* Root)
+{
+
+    if(!Root)
+    {
+        return 1;
+    }
+        printf("%d,",Root->data);
+        preorder(Root->left);
+        preorder(Root->right);
+}
+
+ int postorder( struct node* Root )
 {
   
-    if(root){
-    
-        postorder(root->left);
-        postorder(root->right);
-        printf("%d ", root->data);
+    if(!Root)
+    {
+        return 1;
     }
+        postorder(Root->left);
+        postorder(Root->right);
+        printf(" \n%d ", Root->data);
     
 }
 
 
 int main()
 {
- struct node * NN;
-    insertNode(createNode(root,1));
-    insertNode(createNode(root,2));
-    insertNode(createNode(root,3));
-    insertNode(createNode(root,4));
-    insertNode(createNode(root,5));
-    insertNode(createNode(root,6));
-    insertNode(createNode(root,7));
-    insertNode(createNode(root,8));
-    insertNode(createNode(root,9));
-     preorder(root);
-      postorder(root);
-      inorder(root);
-
-
+ struct node* NN;
+ int i=1;
+int check;
+    while(i<=4)
+    {
+        NN=createNode(i*2);
+      if(insertNode(NN))
+            printf("Node inserted");
+        i++;
+    }
+        preorder(root);
+        printf("preorder complite\n");
+        postorder(root);
+        printf("\npostoder complite");
+        inorder(root);
+      
+return 0;
 }
-
-
 
 
