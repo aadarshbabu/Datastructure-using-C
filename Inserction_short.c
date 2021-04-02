@@ -50,8 +50,8 @@ void insertionShort(int arr[],int n) // This program is desine by College algo..
 
 int main(){
     int arr[]={5,4,3,2,8,9};// main function array..
-    insertionShort(arr,6);// call the function ...
     insertion_short(arr,6);
+    insertionShort(arr,6);// call the function ...
 }
 
 

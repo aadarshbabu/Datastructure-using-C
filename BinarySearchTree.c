@@ -6,7 +6,6 @@ struct node
     int data;
     struct node* right;
     struct node* left;
-    
 
 };
 struct node* root=NULL; // Root is globle pointer;
@@ -56,8 +55,8 @@ int insertNode(struct node* NN)
                      PTR=PTR->right;
                 }        
                
+              
                 
-
             }
 
      
