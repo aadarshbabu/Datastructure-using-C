@@ -1,1 +1,3 @@
-0
+free(TOP);
+        start=NULL;
+        TOP=NULL
