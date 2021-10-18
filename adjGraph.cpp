@@ -2,6 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// adjesenc master
 // Adjectent Graph function...
 class adjGraph
 {
