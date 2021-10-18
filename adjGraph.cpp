@@ -2,28 +2,33 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Adjectent Graph function...
 class adjGraph
 {
 private:
-    vector <char > vertices;
-    vector<pair<char, char > edges;
+    vector<char> vertices;
+    vector<pair<char, char>> edges;
+
 public:
     adjGraph(/* args */);
     ~adjGraph();
-    insertVectices(char vert);
-    is_exist(char vect);
+    void insertVectices(char vert);
+    int is_exist(char vect);
 };
 
-adjGraph::is_exist(char vect){
-  auto it= find(vertices.begin(),vertices.end(),vect); // it's retun a index no, if vectore is exist in spacific location.
-    if(it != vertices.end())
+int adjGraph::is_exist(char vect)
+{
+    // it's retun a index no, if vectore is exist in spacific location.
+    auto it = find(vertices.begin(), vertices.end(), vect);
+    if (it != vertices.end())
         return true;
     return false;
-
 }
-adjGraph::insertVectices(char vert){
-    if(is_exist(char vert))
-        
+void adjGraph::insertVectices(char vert)
+{
+    if (is_exist(vert))
+    {
+    }
 }
 
 // adjGraph::adjGraph(/* args */)
@@ -34,9 +39,9 @@ adjGraph::insertVectices(char vert){
 // {
 // }
 
-int createNode()
+int createNode() {}
 
-    int main()
+int main()
 {
 
     return 0;
