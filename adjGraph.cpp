@@ -4,6 +4,7 @@ using namespace std;
 
 // adjesenc master
 // Adjectent Graph function...
+// class is a just a function
 class adjGraph
 {
 private:
